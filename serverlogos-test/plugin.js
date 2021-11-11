@@ -1,0 +1,1 @@
+(function(){"use strict";function e(t){setTimeout(function(){e(),document.getElementsByClassName("container-3w7J-x")[0].setAttribute("data-guild-id",window.location.pathname.split("/")[2])},1)}e();var n=function(){const t=document.createElement("style");t.textContent="@import url('https://kckarnige.is-a.dev/custom-server-logos/base.css');",document.head.append(t)};n()})();

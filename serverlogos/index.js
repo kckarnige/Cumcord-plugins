@@ -15,7 +15,7 @@ function checkURLchange(currentURL) {
     let timeoutID = setTimeout(() => {
         checkURLchange(window.location.href);
         document.getElementsByClassName("container-3w7J-x")[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
-    }, 1);
+    }, 10);
 
     clearURLChange = () => clearTimeout(timeoutID);
 }

@@ -1,32 +1,38 @@
-/// Courtesy of b1nzy :)
-import { injectCSS } from "@cumcord/patcher";
+const plugid = "serverlogos"
 
-let removeStyle;
-let clearURLChange = () => {};
-let oldURL = "";
-let currentURL = window.location.href;
-
+/// Reverted due to the injection not functioning
+var oldURL = "";
+var currentURL = window.location.href;
 function checkURLchange(currentURL) {
     if (currentURL != oldURL) {
         oldURL = currentURL;
     }
 
     oldURL = window.location.href;
-    let timeoutID = setTimeout(() => {
+    setTimeout(function () {
         checkURLchange(window.location.href);
         document.getElementsByClassName("container-3w7J-x")[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
     }, 1);
-
-    clearURLChange = () => clearTimeout(timeoutID);
 }
+
+var injectStyle = function () {
+    const style = document.createElement('style');
+    style.textContent = "@import url('https://kckarnige.is-a.dev/custom-server-logos/base.css');";
+    document.head.append(style).setAttribute('id', plugid);
+};
+
+var removeStyle = function () {
+    var ecsl = document. getElementById(plugid);
+    ecsl. parentNode. removeChild(ecsl);
+};
 
 export default {
   onLoad() {
-    removeStyle = injectCSS(`@import url('https://kckarnige.is-a.dev/custom-server-logos/base.css');`);
-    checkURLChange();
+    injectStyle();
+    checkURLchange();
   },
   onUnload() {
-    clearURLChange();
     removeStyle();
+    checkURLchange();
   }
 }

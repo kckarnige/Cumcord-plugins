@@ -1,6 +1,6 @@
 const plugid = "serverlogos";
+const container_class = "container-3w7J-x";
 
-/// Reverted due to the injection not functioning
 var oldURL = "";
 var currentURL = window.location.href;
 function checkURLchange(currentURL) {
@@ -11,7 +11,7 @@ function checkURLchange(currentURL) {
     oldURL = window.location.href;
     setTimeout(function () {
         checkURLchange(window.location.href);
-        document.getElementsByClassName("container-3w7J-x")[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
+        document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
     }, 1);
 }
 
@@ -35,6 +35,6 @@ export default {
   onUnload() {
     removeStyle();
     checkURLchange(null);
-    document.getElementById.removeAttribute("data-guild-id");
+    document.getElementsByClassName(container_class).removeAttribute("data-guild-id");
   }
 }

@@ -4,16 +4,19 @@ const headid = "serverlogos-logo";
 
 var oldURL = "";
 var currentURL = window.location.href;
+var clearURLChange = () => {};
 function checkURLchange(currentURL) {
     if (currentURL != oldURL) {
         oldURL = currentURL;
     }
 
     oldURL = window.location.href;
-    setTimeout(function () {
+    let timeoutID = setTimeout(() => {
         checkURLchange(window.location.href);
         document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
     }, 1);
+    
+    clearURLChange = () => clearTimeout(timeoutID);
 }
 
 var injectStyle = function () {
@@ -38,7 +41,7 @@ export default {
   },
   onUnload() {
     removeStyle();
-    checkURLchange(null);
+    clearURLChange();
     document.getElementById(headid).removeAttribute("data-guild-id");
     document.getElementById(headid).removeAttribute("id");
   }

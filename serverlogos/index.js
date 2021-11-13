@@ -1,5 +1,6 @@
 const plugid = "serverlogos";
 const container_class = "container-3w7J-x";
+const headid = "serverlogos-logo";
 
 var oldURL = "";
 var currentURL = window.location.href;
@@ -20,11 +21,14 @@ var injectStyle = function () {
     style.textContent = "@import url('https://kckarnige.is-a.dev/custom-server-logos/base.css');";
     style.setAttribute('id', plugid);
     document.head.append(style);
+    document.getElementsByClassName(container_class)[0].setAttribute('id', headid);
 };
+
 
 var removeStyle = function () {
     var ecsl = document. getElementById(plugid);
     ecsl. parentNode. removeChild(ecsl);
+    
 };
 
 export default {
@@ -35,6 +39,7 @@ export default {
   onUnload() {
     removeStyle();
     checkURLchange(null);
-    document.getElementsByClassName(container_class).removeAttribute("data-guild-id");
+    document.getElementById(headid).removeAttribute("data-guild-id");
+    document.getElementById(headid).removeAttribute("id");
   }
 }

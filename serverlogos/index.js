@@ -35,5 +35,6 @@ export default {
   onUnload() {
     removeStyle();
     checkURLchange(null);
+    document.getElementById.removeAttribute("data-guild-id");
   }
 }

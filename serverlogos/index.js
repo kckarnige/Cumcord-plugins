@@ -1,3 +1,4 @@
+// Thanks to creatable for helping out :)
 const plugid = "serverlogos";
 const container_class = "container-3w7J-x";
 const headid = "serverlogos-logo";

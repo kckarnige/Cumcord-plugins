@@ -12,7 +12,7 @@ function checkURLchange(currentURL) {
     oldURL = window.location.href;
     let timeoutID = setTimeout(() => {
         checkURLchange(window.location.href);
-        document.getElementsByTagName("body").setAttribute('body-guild-id', window.location.pathname.split('/')[2]);
+        document.getElementById("app-mount").setAttribute('body-guild-id', window.location.pathname.split('/')[2]);
     }, 1);
 
     clearURLChange = () => clearTimeout(timeoutID);
@@ -21,13 +21,13 @@ function checkURLchange(currentURL) {
 var injectStyle = function() {
     const style = document.createElement('style');
     style.textContent = "@import url('https://kckarnige.is-a.dev/server-specific-css-concept/base.css');";
-    style.setAttribute('id', plugid);
+    style.setAttribute('plugid', plugid);
     document.head.append(style);
 };
 
 
 var removeStyle = function() {
-    var ecsl = document.getElementById(plugid);
+    var ecsl = document.querySelectorAll("[plugid='"+plugid+"']");
     ecsl.parentNode.removeChild(ecsl);
 
 };
@@ -40,6 +40,6 @@ export default {
     onUnload() {
         removeStyle();
         clearURLChange();
-        document.getElementsByTagName("body").removeAttribute("body-guild-id");
+        document.getElementById("app-mount").removeAttribute("body-guild-id");
     }
 }

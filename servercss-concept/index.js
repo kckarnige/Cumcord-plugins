@@ -12,7 +12,7 @@ function checkURLchange(currentURL) {
     oldURL = window.location.href;
     let timeoutID = setTimeout(() => {
         checkURLchange(window.location.href);
-        document.getElementById("app-mount").setAttribute('body-guild-id', window.location.pathname.split('/')[2]);
+        document.getElementById("app-mount").setAttribute('app-guild-id', window.location.pathname.split('/')[2]);
     }, 1);
 
     clearURLChange = () => clearTimeout(timeoutID);
@@ -40,6 +40,6 @@ export default {
     onUnload() {
         removeStyle();
         clearURLChange();
-        document.getElementById("app-mount").removeAttribute("body-guild-id");
+        document.getElementById("app-mount").removeAttribute("app-guild-id");
     }
 }

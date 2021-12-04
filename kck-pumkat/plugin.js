@@ -1,0 +1,1 @@
+(function(){"use strict";var e=()=>cumcord.patcher.injectCSS('@import"https://raw.githubusercontent.com/kckarnige/pumkat-theme-discord/master/kck-pumkat.theme.css";');let t;var c=()=>({onLoad:()=>t=e(),onUnload:()=>t()});return c})();

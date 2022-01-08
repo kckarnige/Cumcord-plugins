@@ -1,6 +1,6 @@
 // Thanks to creatable for helping out :)
 const plugid = "serverlogos";
-const container_class = "container-3w7J-x";
+const container_class = "container-1-ERn5";
 const headid = "serverlogos-logo";
 
 var oldURL = "";

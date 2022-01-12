@@ -2,7 +2,7 @@
     filter: blur(20px);
 }
 
-[class*="imageZoom-"]:after {
+[class*="imageZoom-"]:not([class*="embedVideo-"]):after {
     content: "Click to view";
     display: flex;
     top: 50%;
@@ -20,7 +20,7 @@
     transition: 0.2s;
 }
 
-[class*="imageZoom-"]:hover:after {
+[class*="imageZoom-"]:not([class*="embedVideo-"]):hover:after {
     background: var(--brand-experiment-560);
     text-decoration: none;
     transition: 0.2s;

@@ -15,6 +15,7 @@ function checkURLchange(currentURL) {
     let timeoutID = setTimeout(() => {
         checkURLchange(window.location.href);
         document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
+        console.log("Injected attribute!")
     }, 1);
     
     clearURLChange = () => clearTimeout(timeoutID);
@@ -26,6 +27,7 @@ var injectStyle = function () {
     style.setAttribute('id', plugid);
     document.head.append(style);
     document.getElementsByClassName(container_class)[0].setAttribute('id', headid);
+    console.log("Injected CSS!")
 };
 
 
@@ -45,5 +47,6 @@ export default {
     clearURLChange();
     document.getElementById(headid).removeAttribute("data-guild-id");
     document.getElementById(headid).removeAttribute("id");
+    console.log("Successfully disabled!")
   }
 }

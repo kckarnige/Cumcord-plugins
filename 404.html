@@ -9,14 +9,16 @@
     <p>Redirecting...</p>
     <script>
         var CumcordManifest = document.location.href + "/cumcord_manifest.json"
+        var CumcordSend = "https://send.cumcord.com/#" + document.location.href
         $.ajax({
             url: CumcordManifest,
             type: 'HEAD',
-            success: function () {
-                document.location.href = "https://send.cumcord.com/#" + document.location.href
-            },
             error: function () {
-                document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins"
+                document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins";
+            },
+
+            else: function () {
+                document.location.href = CumcordSend;
             }
         });
     </script>

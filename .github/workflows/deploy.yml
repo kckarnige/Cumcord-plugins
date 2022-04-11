@@ -11,21 +11,15 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: Prepare "Sperm"
+            - name: Preparing dependencies
               uses: actions/setup-node@v2
               with:
                   node-version: "16"
 
             - run: |
                   npm install --global sperm
-
-            - name: Prepare "Marked"
-              uses: actions/setup-node@v2
-              with:
-                  node-version: "16"
-
-            - run: |
                   npm install -g marked
+
 
               # Magic happens here:
               # - finds every folder in repo (which is why dist dir is hidden)

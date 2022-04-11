@@ -3,20 +3,7 @@
 <head>
     <title>Carnige's Cumcord Plugins</title>
     <script src="jquery-3.6.0.min.js"></script>
-    <script>
-        var CumcordManifest = document.location.href + "/cumcord_manifest.json";
-        var url = "https://send.cumcord.com/#" + document.location.href;
-        $.ajax({
-            url: CumcordManifest,
-            type: 'HEAD',
-            success: function () {
-                $(location).attr('href',url);
-            },
-            error: function () {
-                document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins"
-            }
-        });
-    </script>
+    <script src="checkURL.js"></script>
 </head>
 
 <body>Redirecting...</body>

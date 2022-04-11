@@ -56,7 +56,6 @@ jobs:
               # If you remove this step then you should probably remove the enable_jekyll option in the next one
             - name: Copy additional files
               run: |
-                  cp README.md .dist/README.md
                   cp 404.html .dist/404.html
                   cp jquery-3.6.0.min.js .dist/jquery-3.6.0.min.js
                   cp index.html .dist/index.html

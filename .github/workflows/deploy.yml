@@ -19,13 +19,13 @@ jobs:
             - run: |
                   npm install --global sperm
 
-            - name: Prepare "Showdown"
+            - name: Prepare "Marked"
               uses: actions/setup-node@v2
               with:
                   node-version: "16"
 
             - run: |
-                  npm install showdown -g
+                  npm install -g marked
 
               # Magic happens here:
               # - finds every folder in repo (which is why dist dir is hidden)
@@ -47,7 +47,7 @@ jobs:
               # Converts the markdown in the README file into html for the index page 
             - name: Turn README into the main index file
               run: |
-                  showdown makehtml -i README.md -o .dist\index.html
+                  marked -i README.md -o .dist\index.html
 
 
               # Foolproof feature:

@@ -10,7 +10,7 @@
     <script>
         var CumcordManifest = document.location.href + "/cumcord_manifest.json"
         var CumcordSend = "https://send.cumcord.com/#" + document.location.href
-        $.ajax({
+        window.onload = function() { $.ajax({
             url: CumcordManifest,
             type: 'HEAD',
             error: function () {
@@ -20,7 +20,7 @@
             else: function () {
                 document.location.href = CumcordSend;
             }
-        });
+        })};
     </script>
 </body>
 

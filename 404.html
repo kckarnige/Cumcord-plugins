@@ -15,7 +15,9 @@
                 document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins"
             }
         });
-        document.location.href = "https://send.cumcord.com/#" + location.href
+        window.onload = function () {
+            document.location.href = "https://send.cumcord.com/#" + document.location.href
+        }
     </script>
 </head>
 

@@ -12,7 +12,9 @@
                 document.location.href = "https://send.cumcord.com/#" + location.href
             },
             error: function () {
-                document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins"
+                window.onload = function () {
+                    document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins"
+                }
             }
         });
     </script>

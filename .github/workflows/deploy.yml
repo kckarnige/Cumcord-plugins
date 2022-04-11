@@ -11,13 +11,20 @@ jobs:
         steps:
             - uses: actions/checkout@v2
 
-            - name: Prepare environment
+            - name: Prepare "Sperm"
               uses: actions/setup-node@v2
               with:
                   node-version: "16"
 
             - run: |
                   npm install --global sperm
+
+            - name: Prepare "Showdown"
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "16"
+
+            - run: |
                   npm install --global showdown
 
               # Magic happens here:

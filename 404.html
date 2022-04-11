@@ -11,8 +11,8 @@
         var CumcordManifest = document.location.href + "/cumcord_manifest.json"
         var CumcordSend = "https://send.cumcord.com/#" + document.location.href
         document.getElementById("text").innerHTML = "Redirecting..."
-        document.location.href = CumcordSend
-        window.onload = function() { $.ajax({
+        window.onload = function() { document.location.href = CumcordSend }
+        $.ajax({
             url: CumcordManifest,
             type: 'HEAD',
             error: function () {
@@ -23,7 +23,7 @@
             else: function () {
                 
             }
-        })};
+        });
     </script>
 </body>
 

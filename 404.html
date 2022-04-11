@@ -1,11 +1,23 @@
 <html>
-    <head>
-        <title>Carnige's Cumcord Plugins</title>
-        <script>
-            window.onload = function () {
+
+<head>
+    <title>Carnige's Cumcord Plugins</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        var CumcordManifest = document.location.href + "/cumcord_manifest.json"
+        $.ajax({
+            url: CumcordManifest,
+            type: 'HEAD',
+            error: function () {
+                document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins"
+            },
+            success: function () {
                 document.location.href = "https://send.cumcord.com/#" + document.location.href
             }
-        </script>
-    </head>
-    <body>Redirecting...</body>
+        });
+    </script>
+</head>
+
+<body>Redirecting...</body>
+
 </html>

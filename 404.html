@@ -9,15 +9,12 @@
             url: CumcordManifest,
             type: 'HEAD',
             success: function () {
-                document.location.href = "https://send.cumcord.com/#" + document.location.href
+                window.location.replace("https://send.cumcord.com/#" + document.location.href);
             },
             error: function () {
                 document.location.href = "https://kckarnige.is-a.dev/cumcord-plugins"
             }
         });
-        window.onload = function () {
-            document.location.href = "https://send.cumcord.com/#" + document.location.href
-        }
     </script>
 </head>
 

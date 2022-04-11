@@ -47,9 +47,7 @@ jobs:
               # Converts the markdown in the README file into html for the index page 
             - name: Turn README into the main index file
               run: |
-                  do
-                    showdown makehtml -i README.md -o index.html
-                  done
+                  showdown makehtml -i README.md -o .dist\index.html
 
 
               # Foolproof feature:

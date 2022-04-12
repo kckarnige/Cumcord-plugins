@@ -17,8 +17,8 @@ jobs:
                   node-version: "16"
 
             - run: |
-                  npm install --global sperm
-                  npm install -g marked
+                  npm install -g sperm
+                  npm install -g markdown-to-html-cli
 
 
               # Magic happens here:
@@ -41,7 +41,7 @@ jobs:
               # Converts the markdown in the README file into html for the index page 
             - name: Turn README into the main index file
               run: |
-                  marked -i README.md -o index.html
+                  markdown-to-html --source README.md --output index.html --title "Carnige's Cumcord Plugins" --favicon https://user-images.githubusercontent.com/32397453/141385369-857e575a-8b8e-46ac-a3f7-4885a52fe372.png
 
 
               # Foolproof feature:

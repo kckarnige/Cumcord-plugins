@@ -14,7 +14,7 @@ function checkURLchange(currentURL) {
     oldURL = window.location.href;
     let timeoutID = setTimeout(() => {
         checkURLchange(window.location.href);
-        if ((currentURL != oldURL) && (document.getElementsByClassName(container_class)[0].getAttribute('data-guild-id') = null)) {
+        if (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id')) {
           document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
           console.log("[CSL] Injected attribute!");
         }

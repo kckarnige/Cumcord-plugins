@@ -1,28 +1,16 @@
+// Thanks to creatable for the original URL check method :D
+
 import { log } from '@cumcord/utils/logger';
-// Thanks to creatable for helping out :)
 const plugid = "serverlogos";
 const container_class = "container-1-ERn5";
 const headid = "serverlogos-logo";
 
-var oldURL = "";
-var currentURL = window.location.href;
-var clearURLChange = () => {};
-function checkURLchange(currentURL) {
-    if (currentURL != oldURL) {
-        oldURL = currentURL;
-    }
-
-    oldURL = window.location.href;
-    let timeoutID = setTimeout(() => {
-        checkURLchange(window.location.href);
-        if (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id')) {
-          document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
-          log("[CSL] Injected attribute!");
-        }
-    }, 1);
-    
-    clearURLChange = () => clearTimeout(timeoutID);
-}
+window.onloadedmetadata, function () {
+  if (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id')) {
+    document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
+    log("[CSL] Injected attribute!");
+  }
+};
 
 var injectStyle = function () {
     const style = document.createElement('style');

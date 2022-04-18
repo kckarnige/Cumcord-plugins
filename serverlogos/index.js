@@ -31,11 +31,9 @@ var removeStyle = function () {
 export default {
   onLoad() {
     injectStyle();
-    checkURLchange();
   },
   onUnload() {
     removeStyle();
-    clearURLChange();
     document.getElementById(headid).removeAttribute("data-guild-id");
     document.getElementById(headid).removeAttribute("id");
     log("[CSL] Successfully disabled!")

@@ -1,3 +1,4 @@
+import { log } from '@cumcord/utils/logger';
 // Thanks to creatable for helping out :)
 const plugid = "serverlogos";
 const container_class = "container-1-ERn5";
@@ -16,7 +17,7 @@ function checkURLchange(currentURL) {
         checkURLchange(window.location.href);
         if (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id')) {
           document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
-          console.log("[CSL] Injected attribute!");
+          log("[CSL] Injected attribute!");
         }
     }, 1);
     
@@ -29,7 +30,7 @@ var injectStyle = function () {
     style.setAttribute('id', plugid);
     document.head.append(style);
     document.getElementsByClassName(container_class)[0].setAttribute('id', headid);
-    console.log("[CSL] Injected CSS!")
+    log("[CSL] Injected CSS!")
 };
 
 
@@ -49,6 +50,6 @@ export default {
     clearURLChange();
     document.getElementById(headid).removeAttribute("data-guild-id");
     document.getElementById(headid).removeAttribute("id");
-    console.log("[CSL] Successfully disabled!")
+    log("[CSL] Successfully disabled!")
   }
 }

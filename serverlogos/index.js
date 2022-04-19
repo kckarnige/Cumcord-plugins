@@ -5,13 +5,6 @@ const plugid = "serverlogos";
 const container_class = "container-1-ERn5";
 const headid = "serverlogos-logo";
 
-window.onloadedmetadata, function () {
-  if (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id')) {
-    document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
-    log("[CSL] Injected attribute!");
-  }
-};
-
 var injectStyle = function () {
     const style = document.createElement('style');
     style.textContent = "@import url('https://kckarnige.is-a.dev/custom-server-logos/base.css');";
@@ -27,6 +20,16 @@ var removeStyle = function () {
     ecsl. parentNode. removeChild(ecsl);
     
 };
+
+var checkAttributeInjection = function () {
+  if (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id')) {
+    document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
+    log("[CSL] Injected attribute!");
+    clearInterval();
+  }
+};
+
+setInterval(checkAttributeInjection, 100);
 
 export default {
   onLoad() {

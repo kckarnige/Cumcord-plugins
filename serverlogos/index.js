@@ -29,7 +29,7 @@ var checkAttributeInjection = function () {
   }
 };
 
-setInterval(checkAttributeInjection, 100);
+setInterval(checkAttributeInjection, 0.01);
 
 export default {
   onLoad() {

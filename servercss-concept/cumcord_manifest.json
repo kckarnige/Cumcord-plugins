@@ -1,6 +1,6 @@
 {
     "name": "Server CSS Concept",
-    "description": "Not compatible with Discord revert rebrand and any other theme that changes the ''brand-experiment'' variables [TEST PLUGIN]",
+    "description": "A plugin concept",
     "author": "KayoticCarnige",
     "authorID": "634168893644210186",
     "file": "index.js",

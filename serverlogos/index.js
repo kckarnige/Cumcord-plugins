@@ -22,14 +22,14 @@ var removeStyle = function () {
 };
 
 var checkAttributeInjection = function () {
-  if (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id')) {
+  if ((!window.location.pathname.split('/')[2] == "@me") && (!document.getElementsByClassName(container_class)[0].hasAttribute('data-guild-id'))) {
     document.getElementsByClassName(container_class)[0].setAttribute('data-guild-id', window.location.pathname.split('/')[2]);
     log("[CSL] Injected attribute!");
     clearInterval();
   }
 };
 
-setInterval(checkAttributeInjection, 0.01);
+setInterval(checkAttributeInjection, 0);
 
 export default {
   onLoad() {

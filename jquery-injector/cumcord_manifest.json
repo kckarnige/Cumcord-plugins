@@ -1,0 +1,9 @@
+{
+  "name": "jQuery Injector",
+  "description": "Injects jQuery for use in plugins",
+  "author": "KayoticCarnige",
+  "authorID": "634168893644210186",
+  "media": "https://raw.githubusercontent.com/kckarnige/cumcord-plugins/master/jquery-injector/thumbnail.png",
+  "file": "index.js",
+  "license": "OSL-3.0"
+}

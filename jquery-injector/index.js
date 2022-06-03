@@ -6,10 +6,10 @@ var showToast = cumcord.modules.webpack.findByProps("showToast").showToast;
 pluginData.id = "cumcord-jQuery";
 pluginData.enabled = function (boolean) {
 if (boolean === true) {
-  log(`${pluginData.name} | Injected!`)
+  log(`${pluginData.name} | Injected!`);
   showToast({message: `${pluginData.name} has been enabled! `, id: "plugin-toast", type: 1});
 } else if (boolean === false) {
-  log(`${pluginData.name} | Removed!`)
+  log(`${pluginData.name} | Removed!`);
   showToast({message: `${pluginData.name} has been disabled! `, id: "plugin-toast", type: 2});
 }
 }

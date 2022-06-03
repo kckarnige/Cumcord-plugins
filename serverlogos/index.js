@@ -12,7 +12,7 @@ var injectStyle = function () {
     style.id = plugid;
     document.head.append(style);
     document.getElementsByClassName(container_class)[0].setAttribute('id', headid);
-    log(`${pluginData.name} | Injected CSS!`)
+    log(`${pluginData.name} | Injected CSS!`);
 };
 
 
@@ -39,6 +39,6 @@ export default {
     removeStyle();
     document.getElementById(headid).removeAttribute("data-guild-id");
     document.getElementById(headid).removeAttribute("id");
-    log(`${pluginData.name} | Successfully disabled!`)
+    log(`${pluginData.name} | Successfully disabled!`);
   }
 }

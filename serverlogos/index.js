@@ -1,7 +1,7 @@
 // Thanks to creatable for the original URL check method :D
 
 import { log } from '@cumcord/utils/logger';
-import { manifest as pluginData } from "@cumcord/pluginData"
+import { manifest as pluginData } from "@cumcord/pluginData";
 const plugid = "serverlogos";
 const container_class = "container-1-ERn5";
 const headid = "serverlogos-logo";

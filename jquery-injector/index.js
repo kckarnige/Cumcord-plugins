@@ -1,7 +1,7 @@
 // "quick question: what the fuck why?" -Creatable 2022
 // Stole the toast code from Beefers, cope
 import { log } from '@cumcord/utils/logger';
-var pluginData = cumcord.pluginData.manifest;
+import { manifest as pluginData } from "@cumcord/pluginData"
 var showToast = cumcord.modules.webpack.findByProps("showToast").showToast;
 pluginData.id = "cumcord-jQuery";
 pluginData.enabled = function (boolean) {

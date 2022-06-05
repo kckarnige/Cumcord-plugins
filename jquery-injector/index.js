@@ -3,7 +3,7 @@
 import { log } from '@cumcord/utils/logger';
 import { manifest as pluginData } from "@cumcord/pluginData";
 var showToast = cumcord.modules.webpack.findByProps("showToast").showToast;
-pluginData.id = "cumcord-jQuery";
+pluginData.id = pluginData.name.replace(/\s/g, '');
 pluginData.enabled = function (boolean) {
 if (boolean === true) {
   log(`${pluginData.name} | Injected!`);
